@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>Math Game V1</title> 
+<style>
+.main {
+   width: 600px;
+   height:800px; 
+   border : 3px solid #66ff99;
+   margin: auto;
+}
+.topbar {
+    width: 600px;
+    height: 100px;
+    margin:auto;
+    text-align: center;
+    font-weight: bold;
+    color: #ff6600;
+    font-size:30px;
+    line-height:40px;
+}
+.quiz {
+    width: 600px;
+    height: 150px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    color: #0033cc;
+    font-size:70px;
+    line-height:20px;
+}
+.play {
+    width: 600px;
+    height: 350px;
+    margin: auto;
+}
+.play button:focus{
+    outline:none;
+}
+.play button:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.but1{
+    background: url(images/number1.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+    
+
+}
+.but2{
+    background: url(images/number2.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+.but3{
+    background: url(images/number3.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+.but4{
+    background: url(images/number4.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+.but5{
+    background: url(images/number5.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+.but6{
+    background: url(images/number6.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+.but7{
+    background: url(images/number7.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+.but8{
+    background: url(images/number8.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+.but9{
+    background: url(images/number9.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+.but0{
+    background: url(images/number0.png); 
+    background-size: contain;
+    width: 100px;
+ height: 100px;
+    border-radius: 50%
+}
+
+</style>
+<script>
+    var ans = -1 + "";
+    function question(){
+        var p4 = parseInt(Math.random()*(9))+1;
+        var p5 = parseInt(Math.random()*(8-p4))+1;
+        ans = p4 + p5 +"";
+        var question_str = p4 + " + " + p5 + " = ?";
+        return(question_str);
+    }
+    function catchID(key) {
+        return(key.id);
+    }
+    function startgame(key){
+        if (ans == catchID(key)){
+            document.getElementById("p1").innerHTML="<font color= green>Well done!</font>";
+            document.getElementById("p2").innerHTML=question();
+        }
+        else{
+            document.getElementById("p1").innerHTML="<font color= red>Sorry Wrong!</font>";
+        }
+
+    }
+</script>
+</head>
+<body>
+<div class="main">
+    <div class="topbar">
+        <p id="p1">Quiz Starts!</p>
+    </div>
+    <div class="quiz">
+        <!-- <p><span id="p2">3</span> + <span id="p3">2</span> = ?</p> -->
+        <p id="p2"></p>
+    </div>
+    <div class="play">
+        <table align="center">
+        <tr>
+            <td><button class="but1" type="button" id="1" onclick="startgame(this)"></button></td>
+            <td><button class="but2" type="button" id="2" onclick="startgame(this)"></button></td>
+            <td><button class="but3" type="button" id="3" onclick="startgame(this)"></button></td>
+        </tr>
+        <tr>
+            <td><button class="but4" type="button" id="4" onclick="startgame(this)"></button></td>
+            <td><button class="but5" type="button" id="5" onclick="startgame(this)"></button></td>
+            <td><button class="but6" type="button" id="6" onclick="startgame(this)"></button></td>
+        </tr>
+        <tr>
+            <td><button class="but7" type="button" id="7" onclick="startgame(this)"></button></td>
+            <td><button class="but8" type="button" id="8" onclick="startgame(this)"></button></td>
+            <td><button class="but9" type="button" id="9" onclick="startgame(this)"></button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class="but0" type="button" id="0" onclick="startgame(this)"></button></td>
+        </tr>
+    </table>
+    </div>
+</div>
+<script>
+    document.getElementById("p2").innerHTML=question();
+</script>
+</body>
+</html>
