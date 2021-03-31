@@ -119,8 +119,8 @@
 <script>
     var ans = -1 + "";
     function question(){
-        var p4 = parseInt(Math.random()*(9))+1;
-        var p5 = parseInt(Math.random()*(8-p4))+1;
+        var p4 = Math.floor((Math.random() * 10));
+        var p5 = Math.floor(Math.random()*(10-p4));
         ans = p4 + p5 +"";
         var question_str = p4 + " + " + p5 + " = ?";
         return(question_str);
